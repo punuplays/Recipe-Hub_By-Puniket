@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#17121b">
+
+    <meta name="description" content="Discover 100+ delicious and detailed recipes at Recipe Hub by Puniket.">
+
+    <title>Recipe Hub by Puniket | Discover Amazing Recipes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+        <div class="loader-content">
+            <span>🍽️</span>
+            <h2>RECIPE HUB</h2>
+            <p>Preparing something delicious...</p>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                <span>RECIPE <b>HUB</b>
+                    <small>BY PUNIKET</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#favorites">❤️ My Favorites</a>
+                <a href="#about">About</a>
+            </div>
+
+            <a href="#recipes" class="nav-button">
+                Explore Recipes ↗
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <main>
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                ✨ YOUR ULTIMATE FOOD DESTINATION
+            </span>
+
+            <h1>
+                Cook Something
+                <span>Amazing.</span>
+            </h1>
+
+            <p>
+                Discover delicious recipes, explore new flavours,
+                and create unforgettable meals with Recipe Hub.
+                Your next favourite dish starts here.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#recipes" class="primary-btn">
+                    Explore Recipes →
+                </a>
+
+                <a href="#categories" class="secondary-btn">
+                    Browse Categories
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>100+</h3>
+                    <p>Recipes</p>
+                </div>
+
+                <div>
+                    <h3>10</h3>
+                    <p>Categories</p>
+                </div>
+
+                <div>
+                    <h3>∞</h3>
+                    <p>Flavours</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-image-main">
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1000"
+                    alt="Delicious food collection">
+            </div>
+
+            <div class="floating-card">
+                <span>🍳</span>
+                <div>
+                    <strong>Made with Love</strong>
+                    <small>Every recipe matters</small>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section">
+
+        <div class="search-heading">
+            <span>FIND YOUR NEXT FAVOURITE</span>
+            <h2>What are you craving today?</h2>
+        </div>
+
+        <div class="search-box">
+            <span>⌕</span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search pizza, burger, pasta..."
+                aria-label="Search recipes">
+
+            <button id="searchButton">
+                Search
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories-section" id="categories">
+
+        <div class="section-heading">
+            <div>
+                <span>EXPLORE BY CATEGORY</span>
+                <h2>Discover Categories</h2>
+                <p>Find the perfect dish for every craving.</p>
+            </div>
+
+            <a href="#recipes">View Recipes ↗</a>
+        </div>
+
+        <div class="category-grid" id="categoryGrid">
+
+            <!-- Categories are generated using JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURED RECIPES -->
+    <section class="featured-section">
+
+        <div class="featured-content">
+
+            <span>✦ HANDPICKED FOR YOU</span>
+
+            <h2>
+                Good Food.
+                <br>
+                Great Memories.
+            </h2>
+
+            <p>
+                From comforting classics to exciting new creations,
+                find inspiration for your next kitchen adventure.
+            </p>
+
+            <a href="#recipes" class="primary-btn">
+                Discover More →
+            </a>
+
+        </div>
+
+        <div class="featured-image">
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000"
+                alt="Featured gourmet burger">
+        </div>
+
+    </section>
+
+
+    <!-- RECIPE COLLECTION -->
+   <!-- MY FAVORITES SECTION -->
+
+<section class="favorites-section" id="favorites">
+
+    <div class="section-heading">
+        <span class="section-tag">YOUR COLLECTION</span>
+
+        <h2>My <span>Favorites</span> ❤️</h2>
+
+        <p>Your personally saved recipes, all in one place.</p>
+
+        <div class="favorites-count">
+            <span id="favoritesCount">0</span> Saved Recipes
+        </div>
+    </div>
+
+    <div class="recipe-grid" id="favoritesGrid"></div>
+
+    <div class="empty-state" id="favoritesEmpty">
+        <div class="empty-icon">♡</div>
+        <h3>No favorites yet!</h3>
+        <p>Tap the heart on any recipe to save it here.</p>
+    </div>
+
+</section>
+   
+    <>section class="recipes-section" id="recipes">
+
+        <div class="section-heading">
+
+            <div>
+                <span>OUR RECIPE COLLECTION</span>
+                <h2>Explore Delicious Recipes</h2>
+                <p>Detailed recipes made for everyone.</p>
+            </div>
+
+            <div class="recipe-count" id="recipeCount">
+                100+ Recipes
+            </div>
+
+        </div>
+
+        <!-- RECIPE FILTERS -->
+        <div class="recipe-filters" id="recipeFilters">
+
+            <button class="filter-btn active" data-category="all">
+                All Recipes
+            </button>
+
+        </div>
+
+        <!-- RECIPE CARDS -->
+        <div class="recipe-grid" id="recipeGrid">
+
+            <!-- Recipes are generated using JavaScript -->
+
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+            <span>🍽️</span>
+            <h3>No recipes found</h3>
+            <p>Try another search or category.</p>
+        </div>
+
+        <button class="load-more-btn" id="loadMoreBtn">
+            Explore More Recipes ↓
+        </button>
+
+    </section>
+
+
+    <!-- NEWSLETTER / CALL TO ACTION -->
+    <section class="newsletter-section">
+
+        <div class="newsletter-content">
+
+            <span>❤️ MADE FOR FOOD LOVERS</span>
+
+            <h2>
+                Your Kitchen.
+                Your Creativity.
+                Your Recipes.
+            </h2>
+
+            <p>
+                Explore, experiment and enjoy the beautiful
+                world of cooking with Recipe Hub.
+            </p>
+
+            <a href="#recipes" class="primary-btn">
+                Start Cooking →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1000"
+                alt="Beautiful cooking kitchen">
+        </div>
+
+        <div class="about-content">
+
+            <span>THE STORY BEHIND THE WEBSITE</span>
+
+            <h2>Welcome to Recipe Hub by Puniket</h2>
+
+            <p>
+                Recipe Hub is a food and cooking destination
+                created to make discovering and preparing
+                delicious meals easier and more enjoyable.
+            </p>
+
+            <p>
+                Explore detailed ingredients, preparation
+                times, cooking instructions and helpful tips
+                for every recipe.
+            </p>
+
+            <strong>Created with passion by Puniket Gawade.</strong>
+
+        </div>
+
+    </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo">
+                    <span class="logo-icon">✦</span>
+                    <span>RECIPE <b>HUB</b>
+                        <small>BY PUNIKET</small>
+                    </span>
+                </a>
+
+                <p>
+                    Discover delicious food.
+                    Learn new recipes.
+                    Create beautiful memories.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#about">About Us</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Our Platform</h3>
+                <a href="#recipes">All Recipes</a>
+                <a href="#categories">Food Categories</a>
+                <a href="#home">Discover</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Recipe Hub by Puniket.
+                All Rights Reserved.
+            </p>
+
+            <p>Designed & Created by Puniket Gawade ♥</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+
+    <!-- RECIPE DETAIL MODAL -->
+    <div class="recipe-modal" id="recipeModal" aria-hidden="true">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-content" role="dialog"
+            aria-modal="true" aria-label="Recipe details">
+
+            <button class="modal-close" id="modalClose"
+                aria-label="Close recipe">
+                ×
+            </button>
+
+            <div id="recipeDetails">
+
+                <!-- Detailed recipe content generated by JavaScript -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
